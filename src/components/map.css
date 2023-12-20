@@ -1,0 +1,10 @@
+.mapDiv {
+    position: relative;
+  }
+  
+  .submit-button {
+    position: absolute;
+    bottom: 20px; /* ajustez selon vos besoins pour la position verticale */
+    right: 10px; /* ajustez selon vos besoins pour la position horizontale */
+    z-index: 1000; /* assurez-vous qu'il est au-dessus des autres éléments si nécessaire */
+  }
