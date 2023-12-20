@@ -86,9 +86,7 @@ const MapComponent = () => {
     <div style={{ height: "100vh", width: "100%" }}>
         <div className="mapDiv" ref={mapDiv} style={{height: '100vh', width: "100%"}}>
          </div>
-         {widgetsDiv ? <Widget widgetsDiv={widgetsDiv} saveSketch={saveSketch}/> :null
-
-         }
+         {widgetsDiv ? <Widget widgetsDiv={widgetsDiv} saveSketch={saveSketch}/> :null}
          
          <button  className="submit-button" onClick={saveSketch}>submit</button>
     </div>)
