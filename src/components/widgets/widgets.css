@@ -1,24 +1,38 @@
 .WidgetHeader{
     width:400px;
-    height:50px;
+    height:45px;
     background-color:rgba(59,57,87,.8588235294117647);
     display:flex;
-    flex-direction: row-reverse
+    flex-direction: row;
+    right: 0
+}
+.WidgetTitle{
+    flex: 1;
+    margin-left: 40%;
+    margin-top: 10px;
+    color: white;
+   
+}
+.WidgetHeaderParam{
+    display:flex;
+    flex-direction: row;
 }
 .widgetExit{
     width: 20px; 
     height: 20px;
     background-color: red; 
     border-radius: 50%;
-    margin-top:5px;
-    margin-right:5px 
+    margin-top:7px;
+    margin-right:5px ;
+    
 }
 .widgetZoom{
     width: 20px; 
     height: 20px;
      background-color: #d48806; 
     border-radius: 50%;
-    margin-top:5px;
-    margin-right:5px 
+    margin-top:7px;
+    margin-right:5px ;
+  
 }
 

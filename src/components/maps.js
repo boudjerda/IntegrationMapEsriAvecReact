@@ -4,19 +4,17 @@ import GraphicsLayer from '@arcgis/core/layers/GraphicsLayer';
 import React, { useEffect, useRef,useState } from 'react';
 import Sketch from "@arcgis/core/widgets/Sketch";
 import { featureLayers} from '../configs/featureLayersConfig';
+import {useSelector } from "react-redux";
 import "./map.css"
 import Widget from "./widgets/widget";
 
 const MapComponent = () => {
-
+  const { data, widgetsDiv } = useSelector((state) => state.widgets);
   const mapDiv = useRef(null);
   const [drawnElements, setDrawnElements] = useState([]);
   const drawnElementsRef = useRef(drawnElements);
-
-  const [widgetsDiv, setWidgetsDiv] = useState(false);
-
   const saveSketch =() => {
-    setWidgetsDiv(!widgetsDiv)
+ 
     console.log("sketch", drawnElements )
     console.log("widgetsDiv", widgetsDiv )
 }
@@ -86,7 +84,7 @@ const MapComponent = () => {
     <div style={{ height: "100vh", width: "100%" }}>
         <div className="mapDiv" ref={mapDiv} style={{height: '100vh', width: "100%"}}>
          </div>
-         {widgetsDiv ? <Widget widgetsDiv={widgetsDiv} saveSketch={saveSketch}/> :null}
+         {widgetsDiv ? <Widget/> :null}
          
          <button  className="submit-button" onClick={saveSketch}>submit</button>
     </div>)

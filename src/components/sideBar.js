@@ -1,6 +1,8 @@
 
 import { Layout, Menu } from 'antd';
-import { UserOutlined, VideoCameraOutlined, UploadOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import { UploadOutlined,StockOutlined,NodeIndexOutlined} from '@ant-design/icons';
+import { useDispatch, useSelector } from "react-redux";
+import { setWidgets} from "../redux/reducers/widgets.reducer";
 import { useState } from 'react';
 
 
@@ -8,10 +10,13 @@ const { Header, Sider, Content } = Layout;
 
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
-
+  const dispatch = useDispatch();
   const toggle = () => {
     setCollapsed(!collapsed);
   };
+  const premièreWidget =() => {
+    dispatch(setWidgets());
+}
 
   return (
     <Layout>
@@ -24,17 +29,17 @@ const Sidebar = () => {
           />
         </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-          <Menu.Item key="1">
-            <UserOutlined />
-            <span>nav 1</span>
+          <Menu.Item key="1" onClick={premièreWidget}>
+            <NodeIndexOutlined />
+            <span>Affaire</span>
           </Menu.Item>
           <Menu.Item key="2">
-            <VideoCameraOutlined />
-            <span>nav 2</span>
+            <StockOutlined />
+            <span>Statistique</span>
           </Menu.Item>
           <Menu.Item key="3">
             <UploadOutlined />
-            <span>nav 3</span>
+            <span>Cotation</span>
           </Menu.Item>
         </Menu>
       </Sider>
